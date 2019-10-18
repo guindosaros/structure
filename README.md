@@ -65,7 +65,10 @@ Nous Allons Voir dans Ce Tutoriel comment Cree et Configurer un Projet Django
    │                         ├── wsgi.py
    ├──────────────────  manage.py 
 ```
-*  cree deux dossier ***templates*** et ***static***  dans ***my_projectt***  
+*  cree deux dossier ***templates*** et ***static***  dans ***my_projectt*** 
+   - et dans templates on cree aussi deux dossier bases et pages 
+   - le dossier templates est la ou on aura toutes nos vue du projet
+   - le dossier static est la ou on mettre tous nos dossier static css js etc...
 ```
 ```bash
    dossier_django/
@@ -80,11 +83,13 @@ Nous Allons Voir dans Ce Tutoriel comment Cree et Configurer un Projet Django
    │                         ├── urls.py
    │                         ├── wsgi.py
    ├──────────────────  manage.py 
-   ├────────────────── templates
+   ├────────────────── templates/
+   |                          ├── bases                 
+   │                          ├── pages 
    ├──────────────────  static
 ```
 #### 6 Configurations des fichier du projet
-   ###### dans le settings.py
+   ###### dans le settings.py fichier de cofiguration de notre project
     * copier ce code a la fin aprés le commentaire  import static
   ```python
      # Static files (CSS, JavaScript, Images)
@@ -96,7 +101,7 @@ Nous Allons Voir dans Ce Tutoriel comment Cree et Configurer un Projet Django
       STATIC_ROOT = os.path.join(BASE_DIR, '../static_cdn')
   ```
      * dans la partie TEMPLATES: DIRS': []  remplace par ['templates']  on aura :
-     ```python
+  ```python
      TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -112,4 +117,15 @@ Nous Allons Voir dans Ce Tutoriel comment Cree et Configurer un Projet Django
         },
     },
 ]
-  ```
+```
+#### 7 collectsatic
+* copie tous fichier du static dans static_cdn
+```pyhon
+   python manage.py collectsatic
+```
+#### 8 lancer le serveur
+* copie tous fichier du static dans static_cdn
+```pyhon
+   python manage.py runserver
+```
+lancer votre projet dans le navigateur http://127.0.0.1:8000
