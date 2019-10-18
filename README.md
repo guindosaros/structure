@@ -63,5 +63,53 @@ Nous Allons Voir dans Ce Tutoriel comment Cree et Configurer un Projet Django
    │                         ├── settings.py
    │                         ├── urls.py
    │                         ├── wsgi.py
-   ├────────────────── manage.py 
+   ├──────────────────  manage.py 
 ```
+*  cree deux dossier ***templates*** et ***static***  dans ***my_projectt***  
+```
+```bash
+   dossier_django/
+   ├─────────────── venv
+   ├─────────────── firstproject
+   │                ├── media_cdn
+   │                ├── staic_cdn
+   │                ├── my_project/
+   ├─────────────────  my_project/
+   │                         ├── __inti__.py
+   │                         ├── settings.py
+   │                         ├── urls.py
+   │                         ├── wsgi.py
+   ├──────────────────  manage.py 
+   ├────────────────── templates
+   ├──────────────────  static
+```
+#### 6 Configurations des fichier du projet
+   ###### dans le settings.py
+    * copier ce code a la fin aprés le commentaire  import static
+  ```python
+     # Static files (CSS, JavaScript, Images)
+      # https://docs.djangoproject.com/en/2.2/howto/static-files/
+      STATIC_URL = '/static/'
+      STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+      MEDIA_URL = '/media/'
+      MEDIA_ROOT = os.path.join(BASE_DIR, '../media_cdn')
+      STATIC_ROOT = os.path.join(BASE_DIR, '../static_cdn')
+  ```
+     * dans la partie TEMPLATES: DIRS': []  remplace par ['templates']  on aura :
+     ```python
+     TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ['templates'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+  ```
