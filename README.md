@@ -6,8 +6,14 @@ Nous Allons Voir dans Ce Tutoriel comment Cree et Configurer un Projet Django
 
 #### 1- Creation de l'environnement virtuel 
 * a l'interieur de votre dossier_django faire la commande suivante :
-```python*
+```python
+   dossier_django/
+   ├─────────────── venv
+```
+* aprés avoir taper la commande vous aurez un dossier nouveau dossier ***venv*** l'interieur de votre ***dossier_django***
+ ```bash
    python -m venv venv 
 ```
-
+#### 1- activation de la machine virtuel 
+ 
 
