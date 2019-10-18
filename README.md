@@ -1,4 +1,4 @@
-# structure_django de création d'un projet django
+#  création et structure_django d'un projet django
 Nous Allons Voir dans Ce Tutoriel comment Cree et Configurer un Projet Django
 - Si Vous n'avez par python installer python3 sur votre ordinateur 
 * Sur Votre ordinateur Cree un nouveau dossier ***dossier_django***
@@ -57,5 +57,11 @@ Nous Allons Voir dans Ce Tutoriel comment Cree et Configurer un Projet Django
    ├─────────────── firstproject
    │                ├── media_cdn
    │                ├── staic_cdn
-   │                ├── my_project
+   │                ├── my_project/
+   ├─────────────────  my_project/
+   │                         ├── __inti__.py
+   │                         ├── settings.py
+   │                         ├── urls.py
+   │                         ├── wsgi.py
+   ├────────────────── manage.py 
 ```
